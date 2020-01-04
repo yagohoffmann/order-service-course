@@ -28,7 +28,7 @@ namespace OrderServiceCourse.Entities
             return product.Name + ", $"
                 + Price.ToString("F2", CultureInfo.InvariantCulture)
                 + ", Quantity: " + Quantity
-                + ", Subtotal: $" + SubTotal();
+                + ", Subtotal: $" + SubTotal().ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

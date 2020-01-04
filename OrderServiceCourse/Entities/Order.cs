@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using OrderServiceCourse.Entities.Enums;
+using System.Globalization;
 
 namespace OrderServiceCourse.Entities
 {
@@ -50,7 +51,7 @@ namespace OrderServiceCourse.Entities
             sb.AppendLine($"Order status: {Status}");
             sb.AppendLine($"Client: {cliente.Name} ({cliente.BirthDate.ToString("dd/MM/yyyy")}) - {cliente.Email}");
             foreach (OrderItem item in Items) sb.AppendLine(item.ToString());
-            sb.AppendLine($"Total price: ${Total()}");
+            sb.AppendLine($"Total price: ${Total().ToString("F2", CultureInfo.InvariantCulture)}");
             return sb.ToString();
         }
     }
